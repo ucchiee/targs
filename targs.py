@@ -71,7 +71,7 @@ def main():
 
     # Read commands, skipping blank lines
     cmds: list[str] = sys.stdin.read().split("\n")
-    cmds = [cmd for cmd in cmds if cmd != '']
+    cmds = [cmd for cmd in cmds if cmd != ""]
 
     if len(cmds) == 0:
         print("Specify commands to execute")
