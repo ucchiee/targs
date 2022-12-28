@@ -9,7 +9,7 @@ pip install git+https://github.com/ucchiee/targs.git
 
 ## Usage
 
-`targs` reads newline delimited strings from the standard input and executes each of them in the tmux panes.
+`targs` reads newline delimited strings from the standard input and executes each of them in the automatically created panes.
 
 e.g.:
 
