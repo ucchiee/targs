@@ -4,9 +4,7 @@ tmux + xargs
 ## Install
 
 ```bash
-git clone https://github.com/ucchiee/targs.git
-cd targs
-pip install -e .
+pip install git+https://github.com/ucchiee/targs.git
 ```
 
 ## Usage
