@@ -31,8 +31,10 @@ def select_pane(direction: str, ntimes: int = 1) -> int:
     return os.system(tmux_cmd)
 
 
-def new_window() -> int:
+def new_window(name: str = "") -> int:
     tmux_cmd = "tmux new-window"
+    if name:
+        tmux_cmd += f" -n {name}"
     return os.system(tmux_cmd)
 
 
@@ -79,7 +81,7 @@ def main():
     num_panes: int = args.height * args.width
     num_windows: int = ceil(len(cmds) / num_panes)
     for i in range(num_windows):
-        new_window()
+        new_window(f"targs{i}")
         split_and_execute(args, cmds[num_panes * i: num_panes * (i + 1)])
 
 
