@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 from argparse import Namespace
+from math import ceil
 
 
 def split_window_evenly(splitnum: int, vertical: bool = True) -> int:
@@ -76,7 +77,7 @@ def main():
 
     # Iterate over windows
     num_panes: int = args.height * args.width
-    num_windows: int = int(len(cmds) / num_panes + 1)
+    num_windows: int = ceil(len(cmds) / num_panes)
     for i in range(num_windows):
         new_window()
         split_and_execute(args, cmds[num_panes * i: num_panes * (i + 1)])
