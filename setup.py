@@ -1,7 +1,7 @@
 from setuptools import setup
 
 DESCRIPTION = "targs: tmux + xargs"
-NAME = "targs"
+NAME = "tmux_xargs"
 AUTHOR = "Yusuke Uchida"
 AUTHOR_EMAIL = "fantomyuu0623@gmail.com"
 URL = "https://github.com/ucchiee/targs"
