@@ -66,12 +66,13 @@ def main():
     parser.add_argument("--height", type=int, default=2)
     args: Namespace = parser.parse_args()
 
-    # Read commands
+    # Read commands, skipping blank lines
     cmds: list[str] = sys.stdin.read().split("\n")
-    if len(cmds) > 0 and cmds[-1] == "":
-        cmds = cmds[:-1]
+    cmds = [cmd for cmd in cmds if cmd != '']
+
     if len(cmds) == 0:
         print("Specify commands to execute")
+        exit()
 
     # Iterate over windows
     num_panes: int = args.height * args.width
