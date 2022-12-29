@@ -7,7 +7,7 @@ AUTHOR_EMAIL = "fantomyuu0623@gmail.com"
 URL = "https://github.com/ucchiee/targs"
 LICENSE = "MIT"
 DOWNLOAD_URL = URL
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 PYTHON_REQUIRES = ">=3.9"
 INSTALL_REQUIRES = ["wheel", "setuptools"]
 KEYWORDS = "tmux xargs targs"

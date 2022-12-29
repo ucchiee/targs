@@ -12,7 +12,7 @@ def split_window_evenly(splitnum: int, vertical: bool = True) -> int:
             break
         tmux_cmd += "split-window "
         tmux_cmd += f"{'-v' if vertical else '-h'} "
-        tmux_cmd += f"-l {100 - int(100 * i / (splitnum - idx))}% "
+        tmux_cmd += f"-p {100 - int(100 * i / (splitnum - idx))} "
         tmux_cmd += "-d \\; "
     return os.system(tmux_cmd)
 
