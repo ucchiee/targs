@@ -7,9 +7,8 @@ AUTHOR_EMAIL = "fantomyuu0623@gmail.com"
 URL = "https://github.com/ucchiee/targs"
 LICENSE = "MIT"
 DOWNLOAD_URL = URL
-VERSION = "0.0.2"
+VERSION = "0.0.4"
 PYTHON_REQUIRES = ">=3.9"
-INSTALL_REQUIRES = ["wheel", "setuptools"]
 KEYWORDS = "tmux xargs targs"
 with open("README.md", "r", encoding="utf-8") as fp:
     readme = fp.read()
@@ -32,7 +31,7 @@ setup(
     download_url=URL,
     license=LICENSE,
     keywords=KEYWORDS,
-    install_requires=INSTALL_REQUIRES,
+    install_requires=[],
     py_modules=PY_MODULES,
     entry_points=ENTRY_POINTS,
 )
