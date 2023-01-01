@@ -20,10 +20,10 @@ class TargsArgumentParser(argparse.ArgumentParser):
         # Parse arguments
         ret_args: Namespace
         if has_util:
-            ret_args = super().parse_args(sys.argv[1:sep_idx], namespace=namespace)
-            setattr(ret_args, "cmd", sys.argv[sep_idx + 1:])
+            ret_args = super().parse_args(argv[1:sep_idx], namespace=namespace)
+            setattr(ret_args, "cmd", argv[sep_idx + 1:])
         else:
-            ret_args = super().parse_args(namespace=namespace)
+            ret_args = super().parse_args(argv, namespace=namespace)
             setattr(ret_args, "cmd", ["echo", "{}"])
             setattr(ret_args, "replstr", "{}")
 
