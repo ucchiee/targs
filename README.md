@@ -1,25 +1,27 @@
 # targs
-tmux + xargs
+tmux + xargs = targs
 
 ## Install
 
 ```bash
 pip install git+https://github.com/ucchiee/targs.git
+# or
+pip install tmux-xargs
 ```
 
 ## Usage
 
-`targs` reads newline delimited strings from the standard input and executes each of them in the automatically created panes.
+`targs` reads newline delimited strings from the standard input and executes utility with the strings as arguments.
 
 e.g.:
 
 ```bash
-$ cat scripts
-# echo 1
-# echo 2
-# echo 3
-# echo 4
+$ cat ./etc/domains.txt
+# google.com
+# apple.com
+# facebook.com
+# amazon.com
 
 $ tmux
-$ cat scripts | targs
+$ cat ./etc/domains.txt | targs -I {} -- ping {}
 ```
