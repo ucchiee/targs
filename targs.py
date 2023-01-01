@@ -50,7 +50,7 @@ def main():
     e.g.
     "ping {}" -> ["ping google.com", "ping github.com"]
     """
-    cmds = [cmd.replace(args.replstr, line) if args.replstr else args.cmd for line in inputs]
+    cmds = [cmd.replace(args.replstr, line) if args.replstr else cmd for line in inputs]
 
     # Iterate over windows
     num_panes: int = args.height * args.width
