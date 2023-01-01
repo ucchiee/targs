@@ -2,7 +2,7 @@ from argparse import Namespace
 from math import ceil
 
 import tmux
-from arguments import ArgumentParser, parse_stdin
+from arguments import Parser
 
 
 def split_and_execute(args: Namespace, cmds: list[str]):
@@ -30,15 +30,10 @@ def split_and_execute(args: Namespace, cmds: list[str]):
 
 
 def main():
-    # Configure parser
-    parser = ArgumentParser(usage="%(prog)s [options] [-- utility [argument ...]]")
-    parser.add_argument("--width", type=int, default=2)
-    parser.add_argument("--height", type=int, default=2)
-    parser.add_argument("-I", metavar="replstr", dest="replstr", type=str)
 
-    args: Namespace = parser.parse_args()
+    args: Namespace = Parser.parse_args()
 
-    inputs: list[str] = parse_stdin(delimiter="\n")
+    inputs: list[str] = Parser.parse_stdin(delimiter="\n")
 
     """
     e.g.

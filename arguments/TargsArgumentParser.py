@@ -3,7 +3,7 @@ import sys
 from argparse import Namespace
 
 
-class ArgumentParser(argparse.ArgumentParser):
+class TargsArgumentParser(argparse.ArgumentParser):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
