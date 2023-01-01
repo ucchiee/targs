@@ -39,7 +39,17 @@ def main():
     args: Namespace = parser.parse_args()
 
     inputs: list[str] = parse_stdin(delimiter="\n")
+
+    """
+    e.g.
+    ["ping", "{}"] -> "ping {}"
+    """
     cmd = " ".join(args.cmd)
+
+    """
+    e.g.
+    "ping {}" -> ["ping google.com", "ping github.com"]
+    """
     cmds = [cmd.replace(args.replstr, line) if args.replstr else args.cmd for line in inputs]
 
     # Iterate over windows
