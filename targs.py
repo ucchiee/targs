@@ -7,16 +7,16 @@ from arguments import Parser
 
 def split_and_execute(args: Namespace, cmds: list[str]):
     # Split widnow vertically first.
-    tmux.split_window_evenly(args.height, vertical=True)
+    tmux.split_window_evenly(args.vertical, vertical=True)
 
     # Iterate over panes newly created above
     cmd_idx: int = 0
-    for _ in range(args.height):
+    for _ in range(args.vertical):
 
         # Split window horizontally
-        tmux.split_window_evenly(args.width, vertical=False)
+        tmux.split_window_evenly(args.horizontal, vertical=False)
 
-        for _ in range(args.width):
+        for _ in range(args.horizontal):
             if len(cmds) == cmd_idx:
                 # # of commands can be less than # of pane
                 break
@@ -48,7 +48,7 @@ def main():
     cmds = [cmd.replace(args.replstr, line) if args.replstr else cmd for line in inputs]
 
     # Iterate over windows
-    num_panes: int = args.height * args.width
+    num_panes: int = args.vertical * args.horizontal
     num_windows: int = ceil(len(cmds) / num_panes)
     for i in range(num_windows):
         tmux.new_window(f"targs{i}")
