@@ -7,7 +7,7 @@ AUTHOR_EMAIL = "fantomyuu0623@gmail.com"
 URL = "https://github.com/ucchiee/targs"
 LICENSE = "MIT"
 DOWNLOAD_URL = URL
-VERSION = "0.0.7"
+VERSION = "0.0.8"
 PYTHON_REQUIRES = ">=3.9"
 KEYWORDS = "tmux xargs targs"
 with open("README.md", "r", encoding="utf-8") as fp:
